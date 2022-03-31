@@ -92,7 +92,9 @@ class ConversationHandler extends Thread {
                 if (message == null) {
                     return;
                 }
+                // writes to our file
                 pw.println(name + ": " + message);
+                // writes to clients
                 for (PrintWriter writer : Server.printWriters) {
                     writer.println(name + ": " + message);
                 }
